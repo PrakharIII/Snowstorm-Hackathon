@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher - Generate QR</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Generate Attendance QR</h1>
+
+    <input type="text" id="subject" placeholder="Enter Subject Name">
+    <br><br>
+    <button onclick="generateQR()">Generate QR Code</button>
+
+    <div id="qrcode" style="margin-top:20px;"></div>
+</div>
+
+<script>
+function generateQR() {
+    const subject = document.getElementById("subject").value;
+
+    if (subject === "") {
+        alert("Please enter subject name");
+        return;
+    }
+
+    const qrData = subject + "_" + new Date().toLocaleString();
+
+    document.getElementById("qrcode").innerHTML = "";
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: qrData,
+        width: 200,
+        height: 200
+    });
+}
+</script>
+
+</body>
+</html>

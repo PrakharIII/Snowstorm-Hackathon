@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>QR Code Attendance System</h1>
+        <p>Select your role</p>
+
+        <button onclick="goTeacher()">Teacher Login</button>
+        <button onclick="goStudent()">Student Login</button>
+    </div>
+
+    <script>
+        function goTeacher() {
+            window.location.href = "teacher.html";
+        }
+
+        function goStudent() {
+            window.location.href = "student.html";
+        }
+    </script>
+
+</body>
+</html>
